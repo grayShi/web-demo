@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset=utf-8>
+  <meta name=viewport content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no">
+  <title>tabBar动画</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+    }
+
+    .list {
+      position: relative;
+      height: 2.2rem;
+      margin: 2rem 0
+    }
+
+    .list li {
+      position: relative;
+      line-height: 2.2rem;
+      display: block;
+      float: left;
+      font-size: .7rem;
+      color: #8F8F8F;
+      text-align: center;
+      border-bottom: 1px solid #f5f5f5;
+    }
+
+    .list.type2 li {
+      width: 50%;
+    }
+
+    .list.type3 li {
+      width: 33.33%;
+    }
+
+    .list.type4  li{
+      width: 25%;
+    }
+
+    .list li.active {
+      color: #3884FF;
+    }
+
+    .list li+li+.cursor {
+      width: 50%;
+    }
+
+    .list li+li+li+.cursor {
+      width: 33.33%;
+    }
+
+    .list li+li+li+li+.cursor {
+      width: 25%;
+    }
+
+    .list li.active:nth-child(2)~.cursor {
+      transform: translateX(100%);
+      -webkit-transform: translateX(100%);
+      -moz-transform: translateX(100%);
+    }
+
+    .list li.active:nth-child(3)~.cursor {
+      transform: translateX(200%);
+      -webkit-transform: translateX(200%);
+      -moz-transform: translateX(200%);
+    }
+
+    .list li.active:nth-child(4)~.cursor {
+      transform: translateX(300%);
+      -webkit-transform: translateX(300%);
+      -moz-transform: translateX(300%);
+    }
+
+    .list .cursor {
+      height: 2px;
+      width: 100%;
+      display: block;
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      transition: all 0.2s ease-in-out;
+      -moz-transition: all 0.2s ease-in-out;
+      -webkit-transition: all 0.2s ease-in-out;
+    }
+
+    /* 选中蓝色横条的样式可以改这里 */
+    .list .cursor::after {
+      content: '';
+      display: block;
+      background-color: #439df8;
+      height: 100%;
+      width: 60%;
+      margin: 0 auto;
+    }
+
+  </style>
+</head>
+
+<body>
+<ul class="list type2">
+  <li >选项一</li>
+  <li>选项二</li>
+  <i class="cursor"></i>
+</ul>
+<ul class="list type3">
+  <li>选项一</li>
+  <li>选项二</li>
+  <li>选项三</li>
+  <i class="cursor"></i>
+</ul>
+<ul class="list type4">
+  <li>选项一</li>
+  <li>选项二</li>
+  <li>选项三</li>
+  <li>选项四</li>
+  <i class="cursor"></i>
+</ul>
+<script src="//apps.bdimg.com/libs/zepto/1.1.4/zepto.min.js"></script>
+<script>
+  $(function() {
+    $("li").click(function() {
+      $(this).parent().find('li').removeClass("active")
+      $(this).addClass('active')
+    })
+  })
+</script>
+</body>
+
+</html>
