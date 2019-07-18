@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<div class="box">
+
+  <div class="inner">
+    <div class="inner-like-before"></div>
+    <div class="inner-inner">
+      Text
+    </div>
+  </div>
+</div>
+<div>
+  链接：https://www.jianshu.com/p/b45f4d8ca372
+</div>
+
+</body>
+</html>
+<style>
+  .box {
+    height: 300px;
+    text-align: center;
+    background-color: #5f88b6;
+  }
+
+  .box:before {
+    content: '';
+    display: inline-block;
+    width: 0;
+    height: 100%;
+    vertical-align: middle;
+  }
+
+  .inner {
+    display: inline-block;
+    width: 200px;
+    height: 100px;
+    vertical-align: middle;
+    background-color: #6d6d6d;
+  }
+
+  .inner-inner {
+    display: inline-block;
+    width: 50px;
+    height: 50px;
+    vertical-align: middle;
+    background-color: yellow;
+  }
+
+  .inner-like-before {
+    display: inline-block;
+    width: 0;
+    height: 100%;
+    vertical-align: middle;
+  }
+
+</style>
